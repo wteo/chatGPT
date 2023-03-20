@@ -17,15 +17,12 @@ const userInterface = readline.createInterface({
 
 userInterface.prompt();
 userInterface.on('line', async (input) => {
-  const res = await openAI.createCompletion({
+  const res = await openAI.createChatCompletion({
     model: 'gpt-3.5-turbo',
-    messages: [{ role: 'user', content: input }],
-    temperature: 0,
-    max_tokens: 7,
+    messages: [{ role: 'system', content: 'You are a helpful asistant who teaches junior developers and checks on their code for optimization.'}, { role: 'user', content: input }],
   });
-  console.log(res.data);
-  // console.log(res.data.choices[0].message.content);
-  userInterface.prompt();
+  console.log('AI Asistant');
+  console.log(`AI Asistant: ${res.data.choices[0].message.content}`);
 });
 
 
