@@ -1,13 +1,28 @@
 {
-  "name": "chatgpt",
   "type": "module",
+  "name": "chatgpt",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wteo/chatGPT.git"
+  },
+  "author": "Wendy Teo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wteo/chatGPT/issues"
+  },
+  "homepage": "https://github.com/wteo/chatGPT#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "openai": "^3.2.1"
+  }
 }
