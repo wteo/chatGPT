@@ -24,7 +24,7 @@ userInterface.on('line', async (input) => {
   });
   console.log('AI Asistant:');
   console.log(res.data.choices[0].message.content);
-  consolw.log(' ');
+  console.log(' ');
 });
 
 
