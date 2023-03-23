@@ -4,11 +4,9 @@ config();
 import { Configuration, OpenAIApi } from 'openai';
 import readline from 'readline';
 
-const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-
-const openAI = new OpenAIApi(configuration);
+const openAI = new OpenAIApi(new Configuration({
+  apiKey: process.env.REACT_APP_OPENAI_API_KEY,
+}));
 
 const userInterface = readline.createInterface({
   input: process.stdin,
@@ -26,9 +24,3 @@ userInterface.on('line', async (input) => {
   console.log(res.data.choices[0].message.content);
   console.log(' ');
 });
-
-
-
-
-
-
