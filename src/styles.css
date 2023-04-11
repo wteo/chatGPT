@@ -1,31 +1,37 @@
-#chat {
-  border: 3px solid #000099;
-  background-color: #9999ff;
+* {
+  background-color: rgb(10, 10, 86);
+  color: white;
+}
+* #chat {
+  border: 3px solid #cccccc;
   display: grid;
   grid-template-columns: 1fr;
   margin: 1vh 5vw;
   padding: 1vh 0.5vw;
 }
-#chat ul {
+* #chat ul {
   display: grid;
   grid-template-columns: 1fr;
 }
-#chat #user-input {
+* #chat ul li {
+  list-style-type: none;
+  margin-bottom: 2vh;
+}
+* #chat #user-input {
   display: grid;
   grid-template-columns: 5fr 1fr;
 }
-#chat #user-input input, #chat #user-input button {
-  background-color: transparent;
-  border: 1px solid #000099;
+* #chat #user-input input, * #chat #user-input button {
+  border: 1px solid #cccccc;
 }
-#chat #user-input button {
+* #chat #user-input button {
   padding: 0.25vh;
   font-size: 150%;
   transition: all 0.5s;
 }
-#chat #user-input button:hover {
+* #chat #user-input button:hover {
   cursor: pointer;
-  background-color: blue;
+  background-color: #12129b;
 }
 
 /*# sourceMappingURL=styles.css.map */
