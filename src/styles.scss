@@ -1,37 +1,48 @@
-$primary-color: blue;
-$border-color: darken($primary-color, 20%);
+$primary-color: rgb(10, 10, 86);
+$primary-font-color: white;
+$border-color: darken($primary-font-color, 20%);
 
-#chat {
-    border: 3px solid $border-color;
-    background-color: lighten($primary-color, 30%);
-    display: grid;
-    grid-template-columns: 1fr;
-    margin: 1vh 5vw;
-    padding: 1vh 0.5vw;
+* {
+    background-color: $primary-color;
+    color: $primary-font-color;
 
-    ul {
+    #chat {
+        border: 3px solid $border-color;
         display: grid;
         grid-template-columns: 1fr;
-    }
+        margin: 1vh 5vw;
+        padding: 1vh 0.5vw;
+    
+        ul {
+            display: grid;
+            grid-template-columns: 1fr;
 
-    #user-input {
-        display: grid;
-        grid-template-columns: 5fr 1fr;
-
-        input, button {
-            background-color: transparent;
-            border: 1px solid $border-color;
+            li {
+                list-style-type: none;
+                margin-bottom: 2vh;
+            }
         }
-        
-        button {
-            padding: 0.25vh;
-            font-size: 150%;
-            transition: all 0.5s;
-
-            &:hover {
-                cursor: pointer;
-                background-color: $primary-color;
+    
+        #user-input {
+            display: grid;
+            grid-template-columns: 5fr 1fr;
+    
+            input, button {
+                border: 1px solid $border-color;
+            }
+            
+            button {
+                padding: 0.25vh;
+                font-size: 150%;
+                transition: all 0.5s;
+    
+                &:hover {
+                    cursor: pointer;
+                    background-color: lighten($primary-color, 15%);
+                }
             }
         }
     }
+
 }
+
