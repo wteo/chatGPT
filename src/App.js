@@ -57,14 +57,15 @@ function App() {
   const filteredMessages = messages.filter(message => message.role !== 'system'); // Filtered to remove first content in the array
   const contents = filteredMessages.map(message => message.content); 
   /* 
-  Currently, API doesn't work as intended. The arrangement of message array after first item should have the roles 'user' and 'assistant' (a.k.a AI) in a continuing exchange.
+  Currently, API doesn't work as intended. As per OpenAI documentation, the arrangement of message array after first item should 
+  have the roles 'user' and 'assistant' (a.k.a AI) in a continuing exchange.
   Hence, array should go like [user, assistant, user, assistant, user, assistant, etc...]. 
   From previous testing with this array, the AI would be prompted to generate the same message twice in a row.
   After several testing, I managed to resolve this by duplicating the user's input after the initial input. 
   Thus, the array arrangement becomes [user, user, assistant, user, user, assistant, etc...].
   However, this would still print every user's input twice in a row. Hence, I used Set to remove any duplications in the exchange.
   The downside to this is that the app will not print any user's subsequent inputs that are similar to previous inputs.
-  This solution is currently only a quick fix. 
+  Until I can find a more permanent solution, this current solution is only a quick fix. 
   */  
   const uniqueContents = [...new Set(contents)]; // Currently, API doesn't work as intended. The messages array
   
